@@ -3,64 +3,69 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFF",
+    backgroundColor: "#fff",
     paddingTop: 50,
-  },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
     paddingHorizontal: 20,
     alignItems: "center",
-    marginBottom: 10,
+    justifyContent: "flex-start",
   },
-  monthTitle: {
+  title: {
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "#0072c6",
+    marginBottom: 5,
+  },
+  subtitle: {
+    fontSize: 17,
+    color: "#555",
+    marginBottom: 30,
+  },
+  mainButton: {
+    backgroundColor: "#0072c6",
+    width: "100%",
+    borderRadius: 12,
+    padding: 25,
+    alignItems: "center",
+    marginBottom: 30,
+  },
+  mainButtonText: {
+    color: "#fff",
     fontSize: 20,
     fontWeight: "bold",
-    color: "#333",
+    marginTop: 8,
   },
-  calendar: {
-    borderRadius: 15,
-    marginHorizontal: 20,
-    elevation: 2,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginTop: 20,
-    marginBottom: 10,
-    marginLeft: 20,
-    color: "#333",
-  },
-  taskList: {
-    paddingHorizontal: 20,
-  },
-  taskCard: {
+  grid: {
     flexDirection: "row",
-    alignItems: "center",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    width: "100%",
+  },
+  gridItem: {
+    backgroundColor: "#0072c6",
+    width: "47%",
     borderRadius: 12,
-    padding: 15,
-    marginBottom: 15,
+    paddingVertical: 20,
+    alignItems: "center",
+    marginBottom: 20,
   },
-  taskInfo: {
-    flex: 1,
-    marginLeft: 10,
-  },
-  taskText: {
+  gridText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: "bold",
+    textAlign: "center",
+    marginTop: 8,
   },
-  taskSubText: {
+  footer: {
+    backgroundColor: "#0072c6",
+    padding: 10,
+    width: "100%",
+    position: "absolute",
+    bottom: 0,
+    alignItems: "center",
+  },
+  footerText: {
     color: "#fff",
     fontSize: 14,
-  },
-  bottomBar: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-    height: 60,
-    backgroundColor: "#FCEBD5",
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    textAlign: "center",
   },
 });

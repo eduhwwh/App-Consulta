@@ -1,88 +1,51 @@
 import React from "react";
-import {
-  View,
-  Text,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-} from "react-native";
-import { Calendar } from "react-native-calendars";
-import { Feather, MaterialIcons } from "@expo/vector-icons";
+import { View, Text, TouchableOpacity } from "react-native";
 import styles from "./home.styles";
+import { Feather, FontAwesome, Entypo } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 export default function HomeScreen() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
-      {/* Header */}
-      <View style={styles.header}>
-        <TouchableOpacity>
+      <Text style={styles.title}>Agenda Saúde RB</Text>
+      <Text style={styles.subtitle}>Organização e cuidado com você</Text>
+
+      <TouchableOpacity
+        style={styles.mainButton}
+        onPress={() => router.push("/agendar-consulta")}
+      >
+        <Feather name="calendar" size={32} color="#fff" />
+        <Text style={styles.mainButtonText}>Agendar Consulta</Text>
+      </TouchableOpacity>
+
+      <View style={styles.grid}>
+        <TouchableOpacity style={styles.gridItem}>
+          <FontAwesome name="user" size={28} color="#fff" />
+          <Text style={styles.gridText}>Perfil</Text>
         </TouchableOpacity>
-        <Text style={styles.monthTitle}>VivaClin</Text>
-        <TouchableOpacity>
+
+        <TouchableOpacity style={styles.gridItem}>
+          <Entypo name="help-with-circle" size={28} color="#fff" />
+          <Text style={styles.gridText}>Ajuda</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.gridItem}>
+          <Entypo name="location-pin" size={28} color="#fff" />
+          <Text style={styles.gridText}>Postos{'\n'}Próximos</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.gridItem}>
+          <Entypo name="list" size={28} color="#fff" />
+          <Text style={styles.gridText}>Minhas{'\n'}consultas</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Calendar */}
-      <Calendar
-        style={styles.calendar}
-        theme={{
-          backgroundColor: "#fff",
-          calendarBackground: "#fff",
-          selectedDayBackgroundColor: "#2A9D8F",
-          selectedDayTextColor: "#fff",
-          todayTextColor: "#E76F51",
-          arrowColor: "#264653",
-          textMonthFontWeight: "bold",
-          textDayFontSize: 16,
-          textMonthFontSize: 18,
-          textDayHeaderFontSize: 14,
-        }}
-        markedDates={{
-          "2025-10-03": { selected: true },
-          "2025-10-04": { selected: true },
-          "2025-10-08": { marked: true, dotColor: "red" },
-          "2025-10-16": { selected: true, selectedColor: "#E76F51" },
-          "2025-10-25": { selected: true, selectedColor: "#F4A261" },
-        }}
-      />
-
-      {/* Goals */}
-      <Text style={styles.sectionTitle}>Especialidades</Text>
-      <ScrollView style={styles.taskList}>
-        <View style={[styles.taskCard, { backgroundColor: "#E76F51" }]}>
-          <Feather name="flag" size={20} color="#fff" />
-          <View style={styles.taskInfo}>
-            <Text style={styles.taskText}>Saude Familiar</Text>
-            <Text style={styles.taskSubText}>Today</Text>
-          </View>
-          <MaterialIcons name="more-vert" size={24} color="#fff" />
-        </View>
-
-        <View style={[styles.taskCard, { backgroundColor: "#2A9D8F" }]}>
-          <Feather name="flag" size={20} color="#fff" />
-          <View style={styles.taskInfo}>
-            <Text style={styles.taskText}>Design Meeting</Text>
-            <Text style={styles.taskSubText}>Today</Text>
-          </View>
-          <MaterialIcons name="more-vert" size={24} color="#fff" />
-        </View>
-
-        <View style={[styles.taskCard, { backgroundColor: "#F4A261" }]}>
-          <Feather name="flag" size={20} color="#fff" />
-          <View style={styles.taskInfo}>
-            <Text style={styles.taskText}>Design Meeting</Text>
-            <Text style={styles.taskSubText}>Today</Text>
-          </View>
-          <MaterialIcons name="more-vert" size={24} color="#fff" />
-        </View>
-      </ScrollView>
-
-      {/* Bottom Navigation */}
-      <View style={styles.bottomBar}>
-        <Feather name="home" size={24} color="#333" />
-        <Feather name="search" size={24} color="#333" />
-        <Feather name="calendar" size={24} color="#333" />
-        <Feather name="user" size={24} color="#333" />
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>
+          Copyright 2025 Prefeitura de Rio Branco. Todos os direitos reservados
+        </Text>
       </View>
     </View>
   );
