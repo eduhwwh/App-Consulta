@@ -15,7 +15,7 @@ export default function LoginScreen() {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../../../assets/logo.jpg")} // Altere se o logo estiver em outro caminho
+        source={require("../../../assets/logo3.png")} // Altere se o logo estiver em outro caminho
         style={styles.logo}
         resizeMode="contain"
       />

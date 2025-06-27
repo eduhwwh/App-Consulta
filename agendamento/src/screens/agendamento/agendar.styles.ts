@@ -1,11 +1,10 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
+  scrollContainer: {
+    padding: 20,
+    paddingBottom: 40,
     backgroundColor: "#fff",
-    paddingTop: 50,
-    paddingHorizontal: 20,
   },
   title: {
     fontSize: 18,
@@ -17,8 +16,9 @@ export default StyleSheet.create({
     borderRadius: 10,
     elevation: 2,
   },
-  list: {
+  specialtyList: {
     marginTop: 10,
+    marginBottom: 10,
   },
   specialtyItem: {
     padding: 15,
@@ -37,5 +37,43 @@ export default StyleSheet.create({
   },
   specialtyTextSelected: {
     color: "#fff",
+  },
+  horariosContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    marginTop: 10,
+  },
+  horarioItem: {
+    borderColor: "#0072c6",
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    marginBottom: 10,
+    width: "30%",
+    alignItems: "center",
+  },
+  horarioItemSelecionado: {
+    backgroundColor: "#0072c6",
+  },
+  horarioText: {
+    color: "#0072c6",
+    fontSize: 14,
+  },
+  horarioTextSelecionado: {
+    color: "#fff",
+  },
+  botaoConfirmar: {
+    marginTop: 20,
+    backgroundColor: "#0072c6",
+    padding: 15,
+    borderRadius: 8,
+    alignItems: "center",
+  },
+  textoBotaoConfirmar: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });
